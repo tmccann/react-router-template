@@ -4,10 +4,11 @@ import styles from "./NavBar.module.css";
 
 const NavBar = () => {
   //set h1 depending on location
+  const { pathname } = useLocation();
+
   const getPageTitle = () => {
-    let { pathname } = useLocation();
     if (pathname === "/") {
-      pathname = "/contacts";
+      return "Contacts";
     }
     const path = pathname.slice(1);
     const header = path.charAt(0).toUpperCase() + path.slice(1);
